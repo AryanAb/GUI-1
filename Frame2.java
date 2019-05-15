@@ -17,16 +17,21 @@ public class Frame2 {
     private JPanel controlPanel9;
     private JPanel controlPanel10;
 
+    private JTextField t1 = new JTextField("Type your answer here");
+
     private boolean isCorrect = false;
 
     private JPanel[] panels = new JPanel[10];
 
-    private String[] questions = {"How do you make effective passwords?",
-            "How can you get spyware?",
-            "<html>Spyware is an unwanted software that infiltrates your computing device, stearing your internet usage data and sensitive information</html>",
-    "This is a fill in the ________ question.", "This is a short answer question"};
+    private String[] questions = {"1. How do you make effective passwords?",
+            "2. How can you get spyware?",
+            "<html>3. Spyware is an unwanted software that infiltrates your computing device, stearing your internet usage data and sensitive information</html>",
+    "<html>4. A ________ is a type of surveillance technology used to monitor and record each keystroke typed on a specific computer's keyboard.</html>",
+            "5. "};
 
     private int panelIndex = 0;
+
+    String textValue= "";
 
     JButton _continue = new JButton("Continue");
     JButton _continue2 = new JButton("Continue");
@@ -293,7 +298,7 @@ public class Frame2 {
 
         //======================================Question 4===============================================
 
-        JTextField t1 = new JTextField("Type your answer here");
+        //JTextField t1 = new JTextField("Type your answer here");
         t1.setMaximumSize(new Dimension(500, 45));
 
         JButton submit4 = new JButton("Submit");
@@ -307,6 +312,8 @@ public class Frame2 {
 
         submit4.addActionListener(new ButtonClickListener());
         _continue4.addActionListener(new ButtonClickListener());
+
+        textValue = t1.getText();
 
         //===============================================================================================
 
@@ -337,19 +344,29 @@ public class Frame2 {
 
             if (command.equals("All of the above")) {
                 isCorrect = true;
-                System.out.println("Correct Radio Button Selected");
+                //System.out.println("Correct Radio Button Selected");
             } else if(command.equals("True")){
-                System.out.println("Correct Answer Selected");
+                //System.out.println("Correct Answer Selected");
                 isCorrect = true;
             }
+            //if(textValue.toLowerCase().equals("blank")){
+              //  isCorrect = true;
+                //System.out.println("You typed the correct answer");
+            //}
             if(!command.equals("All of the above") && !command.equals("Submit") && !command.equals("True")){
                 isCorrect = false;
-                System.out.println("Wrong Answer Selected");
+                //System.out.println("Wrong Answer Selected");
+            }
+            if(command.equals("Submit")){
+                textValue = t1.getText();
+                if(textValue.toLowerCase().equals("keylogger")){
+                    isCorrect = true;
+                }
             }
             if (command.equals("Submit") && isCorrect) {
                 statusLabel.setText("Correct!");
                 continueButtons[panelIndex].setEnabled(true);
-                System.out.println("Correct!");
+                //System.out.println("Correct!");
             } else if (command.equals("Submit") && !isCorrect) {
                 statusLabel.setText("Wrong!");
             }
