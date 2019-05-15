@@ -335,35 +335,34 @@ public class Frame2 {
 
             String command = e.getActionCommand();
 
-            //while(true) {
-                if (command.equals("All of the above")) {
-                    isCorrect = true;
-                    System.out.println("Correct Radio Button Selected");
-                } else if(command.equals("True")){
-                    System.out.println("Correct Answer Selected");
-                    isCorrect = true;
-                } else if(true){
-                    isCorrect = true;
-                }
-                if (command.equals("Submit") && isCorrect) {
-                    statusLabel.setText("Correct!");
-                    continueButtons[panelIndex].setEnabled(true);
-                    System.out.println("Correct!");
-
-                } else if (command.equals("Submit") && !isCorrect) {
-                    statusLabel.setText("Wrong!");
-                }
-                if (command.equals("Continue")) {
-                    mainFrame.remove(statusLabel);
-                    mainFrame.repaint();
-                    headerLabel.setText(questions[panelIndex + 1]);
-                    mainFrame.remove(panels[panelIndex]);
-                    mainFrame.add(panels[panelIndex + 1]);
-                    panels[panelIndex + 1].setVisible(true);
-                    panelIndex++;
-                    isCorrect = false;
-                }
-            //}
+            if (command.equals("All of the above")) {
+                isCorrect = true;
+                System.out.println("Correct Radio Button Selected");
+            } else if(command.equals("True")){
+                System.out.println("Correct Answer Selected");
+                isCorrect = true;
+            }
+            if(!command.equals("All of the above") && !command.equals("Submit") && !command.equals("True")){
+                isCorrect = false;
+                System.out.println("Wrong Answer Selected");
+            }
+            if (command.equals("Submit") && isCorrect) {
+                statusLabel.setText("Correct!");
+                continueButtons[panelIndex].setEnabled(true);
+                System.out.println("Correct!");
+            } else if (command.equals("Submit") && !isCorrect) {
+                statusLabel.setText("Wrong!");
+            }
+            if (command.equals("Continue")) {
+                mainFrame.remove(statusLabel);
+                mainFrame.repaint();
+                headerLabel.setText(questions[panelIndex + 1]);
+                mainFrame.remove(panels[panelIndex]);
+                mainFrame.add(panels[panelIndex + 1]);
+                panels[panelIndex + 1].setVisible(true);
+                panelIndex++;
+                isCorrect = false;
+            }
         }
     }
 }
