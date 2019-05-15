@@ -19,11 +19,22 @@ public class Frame2 {
 
     private boolean isCorrect = false;
 
-    private JPanel[] panels = {controlPanel, controlPanel2, controlPanel3, controlPanel4, controlPanel5, controlPanel6, controlPanel7,
-    controlPanel8, controlPanel9, controlPanel10};
+    private JPanel[] panels = new JPanel[10];
+
+    private String[] questions = {"How do you make effective passwords?",
+            "How can you get spyware?",
+            "<html>Spyware is an unwanted software that infiltrates your computing device, stearing your internet usage data and sensitive information</html>",
+    "This is a fill in the ________ question.", "This is a short answer question"};
+
+    private int panelIndex = 0;
 
     JButton _continue = new JButton("Continue");
     JButton _continue2 = new JButton("Continue");
+    JButton _continue3 = new JButton("Continue");
+    JButton _continue4 = new JButton("Continue");
+    JButton _continue5 = new JButton("Continue");
+
+    private JButton[] continueButtons = {_continue, _continue2, _continue3, _continue4, _continue5};
 
 
     public Frame2() {
@@ -39,6 +50,7 @@ public class Frame2 {
         mainFrame = new JFrame("Java Quiz");
         mainFrame.setSize(400, 650);
         mainFrame.setLayout(new GridLayout(3, 3));
+        //mainFrame.setLayout(null);
         mainFrame.setResizable(false);
 
         headerLabel = new JLabel("", JLabel.CENTER);
@@ -55,51 +67,61 @@ public class Frame2 {
         controlPanel = new JPanel();
         controlPanel.setLayout(new BoxLayout(controlPanel, BoxLayout.PAGE_AXIS));
         controlPanel.setVisible(true);
+        panels[0] = controlPanel;
 
         // Question 2
         controlPanel2 = new JPanel();
         controlPanel2.setLayout(new BoxLayout(controlPanel2, BoxLayout.PAGE_AXIS));
         controlPanel2.setVisible(false);
+        panels[1] = controlPanel2;
 
         // Question 3
         controlPanel3 = new JPanel();
         controlPanel3.setLayout(new BoxLayout(controlPanel3, BoxLayout.PAGE_AXIS));
         controlPanel3.setVisible(false);
+        panels[2] = controlPanel3;
 
         // Question 4
         controlPanel4 = new JPanel();
         controlPanel4.setLayout(new BoxLayout(controlPanel4, BoxLayout.PAGE_AXIS));
         controlPanel4.setVisible(false);
+        panels[3] = controlPanel4;
 
         // Question 5
         controlPanel5 = new JPanel();
         controlPanel5.setLayout(new BoxLayout(controlPanel5, BoxLayout.PAGE_AXIS));
         controlPanel5.setVisible(false);
+        panels[4] = controlPanel5;
 
         // Question 6
         controlPanel6 = new JPanel();
         controlPanel6.setLayout(new BoxLayout(controlPanel6, BoxLayout.PAGE_AXIS));
         controlPanel6.setVisible(false);
+        panels[5] = controlPanel6;
 
         // Question 7
         controlPanel7 = new JPanel();
         controlPanel7.setLayout(new BoxLayout(controlPanel7, BoxLayout.PAGE_AXIS));
         controlPanel7.setVisible(false);
+        panels[6] = controlPanel7;
 
         // Question 8
         controlPanel8 = new JPanel();
         controlPanel8.setLayout(new BoxLayout(controlPanel8, BoxLayout.PAGE_AXIS));
         controlPanel8.setVisible(false);
+        panels[7] = controlPanel8;
 
         //Question 9
         controlPanel9 = new JPanel();
         controlPanel9.setLayout(new BoxLayout(controlPanel9, BoxLayout.PAGE_AXIS));
         controlPanel9.setVisible(false);
+        panels[8] = controlPanel9;
 
         // Question 10
         controlPanel10 = new JPanel();
         controlPanel10.setLayout(new BoxLayout(controlPanel10, BoxLayout.PAGE_AXIS));
         controlPanel10.setVisible(false);
+        panels[9] = controlPanel10;
 
         mainFrame.add(headerLabel);
         mainFrame.add(controlPanel);
@@ -110,7 +132,7 @@ public class Frame2 {
     private void showEventDemo() {
 
         // ===============================Question 1=================================================
-        headerLabel.setText("How do you make effective passwords?");
+        headerLabel.setText(questions[panelIndex]);
 
         String b1String = "Have at least 12 characters";
         String b2String = "Do not rely on obvious substitution (e.g. p@ssw0rd)";
@@ -231,14 +253,81 @@ public class Frame2 {
         b9.addActionListener(new ButtonClickListener());
         b10.addActionListener(new ButtonClickListener());
         submit2.addActionListener(new ButtonClickListener());
+        _continue2.addActionListener(new ButtonClickListener());
 
         //===============================================================================================
 
         //==================================Question 3===================================================
 
+        String _trueString = "True";
+        String _falseString = "False";
+
+        JRadioButton _true = new JRadioButton(_trueString);
+        _true.setMnemonic(KeyEvent.VK_E);
+        _true.setActionCommand(_trueString);
+
+        JRadioButton _false = new JRadioButton(_falseString);
+        _false.setMnemonic(KeyEvent.VK_C);
+        _false.setActionCommand(_falseString);
+
+        JButton submit3 = new JButton("Submit");
+
+        controlPanel3.add(_true);
+        controlPanel3.add(_false);
+
+        controlPanel3.add(submit3);
+
+        _continue3.setEnabled(false);
+        controlPanel3.add(_continue3);
+
+        ButtonGroup group3 = new ButtonGroup();
+        group3.add(_true);
+        group3.add(_false);
+
+        _true.addActionListener(new ButtonClickListener());
+        _false.addActionListener(new ButtonClickListener());
+        submit3.addActionListener(new ButtonClickListener());
+        _continue3.addActionListener(new ButtonClickListener());
+
+        //===============================================================================================
+
+        //======================================Question 4===============================================
+
+        JTextField t1 = new JTextField("Type your answer here");
+        t1.setMaximumSize(new Dimension(500, 45));
+
+        JButton submit4 = new JButton("Submit");
+
+        controlPanel4.add(t1);
+
+        controlPanel4.add(submit4);
+
+        _continue4.setEnabled(false);
+        controlPanel4.add(_continue4);
+
+        submit4.addActionListener(new ButtonClickListener());
+        _continue4.addActionListener(new ButtonClickListener());
+
+        //===============================================================================================
+
+        //======================================Question 5===============================================
+
+        JTextField t2 = new JTextField("Type your answer here");
+        t2.setMaximumSize(new Dimension(750, 45));
+
+        JButton submit5 = new JButton("Submit");
+
+        controlPanel5.add(t2);
+
+        controlPanel5.add(submit5);
+
+        _continue5.setEnabled(false);
+        controlPanel5.add(_continue5);
+
 
 
         //===============================================================================================
+
     }
 
     private class ButtonClickListener implements ActionListener {
@@ -246,23 +335,35 @@ public class Frame2 {
 
             String command = e.getActionCommand();
 
-            if (command.equals("All of the above")) {
-                isCorrect = true;
-            }
-            if (command.equals("Submit") && isCorrect) {
-                statusLabel.setText("Correct!");
-                _continue.setEnabled(true);
+            //while(true) {
+                if (command.equals("All of the above")) {
+                    isCorrect = true;
+                    System.out.println("Correct Radio Button Selected");
+                } else if(command.equals("True")){
+                    System.out.println("Correct Answer Selected");
+                    isCorrect = true;
+                } else if(true){
+                    isCorrect = true;
+                }
+                if (command.equals("Submit") && isCorrect) {
+                    statusLabel.setText("Correct!");
+                    continueButtons[panelIndex].setEnabled(true);
+                    System.out.println("Correct!");
 
-            }else if (command.equals("Submit") && !isCorrect) {
-                statusLabel.setText("Wrong!");
-            }
-            if (command.equals("Continue")){
-                mainFrame.remove(statusLabel);
-                headerLabel.setText("How can you get spyware?");
-                mainFrame.remove(controlPanel);
-                mainFrame.add(controlPanel2);
-                controlPanel2.setVisible(true);
-            }
+                } else if (command.equals("Submit") && !isCorrect) {
+                    statusLabel.setText("Wrong!");
+                }
+                if (command.equals("Continue")) {
+                    mainFrame.remove(statusLabel);
+                    mainFrame.repaint();
+                    headerLabel.setText(questions[panelIndex + 1]);
+                    mainFrame.remove(panels[panelIndex]);
+                    mainFrame.add(panels[panelIndex + 1]);
+                    panels[panelIndex + 1].setVisible(true);
+                    panelIndex++;
+                    isCorrect = false;
+                }
+            //}
         }
     }
 }
