@@ -27,23 +27,26 @@ public class Frame2 {
   
   private String[] questions = {
     //Question 1
-    "<html>The Traditional Password Advice" + "<br> <br>Has 12 Characters, Minimum: You need to choose a password that’s long enough. You should generally go for passwords that are a minimum of 12 to 14 characters in length. A longer password would be even better. "+
+    "<html>The Traditional Password Advice" + "<br> <br>Has 12 Characters, Minimum: You need to choose a password that¡¯s long enough. You should generally go for passwords that are a minimum of 12 to 14 characters in length. A longer password would be even better. "+
     "<br><br> Includes Numbers, Symbols, Capital Letters, and Lower-Case Letters: Use a mix of different types of characters to make the password harder to crack. " + 
-    "<br><br> Isn’t a Dictionary Word or Combination of Dictionary Words: Stay away from obvious dictionary words and combinations of dictionary words. Any word on its own is bad. Any combination of a few words, especially if they're obvious, is also bad. " + 
-    "<br><br>Doesn’t Rely on Obvious Substitutions: Don’t use common substitutions, either — for example, “H0use” isn’t strong just because you’ve replaced an o with a 0." +
+    "<br><br> Isn¡¯t a Dictionary Word or Combination of Dictionary Words: Stay away from obvious dictionary words and combinations of dictionary words. Any word on its own is bad. Any combination of a few words, especially if they're obvious, is also bad. " + 
+    "<br><br>Doesn¡¯t Rely on Obvious Substitutions: Don¡¯t use common substitutions, either ? for example, ¡°H0use¡± isn¡¯t strong just because you¡¯ve replaced an o with a 0." +
+    
     "<br> <br>1. How do you make effective passwords? </html>",
     
     //Question 2
-    "<html><br>Spyware can affect PCs, Macs, and iOS or Android devices. Although Windows operating systems may be more susceptible to attacks, attackers are becoming better at infiltrating Apple’s operating systems as well."+
+    "<html><br>Spyware can affect PCs, Macs, and iOS or Android devices. Although Windows operating systems may be more susceptible to attacks, attackers are becoming better at infiltrating Apple¡¯s operating systems as well."+
     "<br>Some of the most common ways your computer can become infected with spyware include these:"+
     "<br>Accepting a prompt or pop-up without reading it first"+
     "<br>Downloading software from an unreliable source"+
     "<br>Opening email attachments from unknown senders"+
     "<br>Pirating media such as movies, music, or games"+
+    
     "<br><br>2. How can you get spyware?</html>",
     
     //Question 3
-    "<html><br>Spyware can affect PCs, Macs, and iOS or Android devices. Although Windows operating systems may be more susceptible to attacks, attackers are becoming better at infiltrating Apple’s operating systems as well."+
+    "<html><br>Spyware can affect PCs, Macs, and iOS or Android devices. Although Windows operating systems may be more susceptible to attacks, attackers are becoming better at infiltrating Apple¡¯s operating systems as well."+
+    
     "<br><br>3. Spyware is an unwanted software that infiltrates your computing device, stearing your internet usage data and sensitive information</html>",
     
     //Question 4
@@ -51,39 +54,60 @@ public class Frame2 {
     "<br>Keylogger software is also available for use on smartphones, such as Apple's iPhone and Android devices."+
     "<br>A hardware-based keylogger is a small device that serves as a connector between the computer keyboard and the computer."+
     "<br>The device is designed to resemble an ordinary keyboard PS/2 connector,making it relatively easy for someone who wants to monitor a user's behavior to hide such a device."+
+    
     "<br><br>4. A ________ is a type of surveillance technology used to monitor and record each keystroke typed on a specific computer's keyboard.</html>",
     
-    
+    //Question 5 Aryan's Question
     "5. There is no need to read the term and condition.",
-    "6. How can you prevent spyware?",
-    "7. Piracy is unethical",
+    
+    //Question 6
+    "<html><br>Spyware can affect PCs, Macs, and iOS or Android devices. Although Windows operating systems may be more susceptible to attacks, attackers are becoming better at infiltrating Apple¡¯s operating systems as well."+
+    "<br>Some of the most common ways your computer can become infected with spyware include these:"+
+    "<br>Accepting a prompt or pop-up without reading it first"+
+    "<br>Downloading software from an unreliable source"+
+    "<br>Opening email attachments from unknown senders"+
+    "<br>Pirating media such as movies, music, or games"+
+    
+    "<br><br>6. How can you prevent spyware?</html>",
+    
+    //Question 7 Ivan's Question
+    "<html><br>Commandment 6: Refrain from copying software or buying pirated copies. Pay for software unless it is free" +
+    "<br>Explanation: Like any other artistic or literary work, software is copyrighted. A piece of code is the original work of the individual who created it. It is copyrighted in his/her name. "+
+    "<br>In case of a developer writing software for the organization she works for, the organization holds the copyright for it. Copyright holds true unless its creators announce it is not. "+
+    "<br>Obtaining illegal copies of copyrighted software is unethical and also encourages others to make copies illegally."+
+    
+    "<br><br>7. Piracy is unethical</html>",
     
     // Question 8
     "<html><br>Your personal information can be stolen without your knowledge. " +
-    "<br>Many people find out they’ve been the victim of identity theft when they’re denied a loan, job or rent unexpectedly because of a credit check. "+
-    "<br>This is why it’s very important to check your credit report once a year for errors or strange activities. "+
+    "<br>Many people find out they¡¯ve been the victim of identity theft when they¡¯re denied a loan, job or rent unexpectedly because of a credit check. "+
+    "<br>This is why it¡¯s very important to check your credit report once a year for errors or strange activities. "+
     "<br>Others signs of identity theft include:"+
-    "<br>bills and statements don't arrive when they are supposed to — they may have been stolen from your mailbox or someone may have changed the mailing address for your accounts"+
+    "<br>bills and statements don't arrive when they are supposed to ? they may have been stolen from your mailbox or someone may have changed the mailing address for your accounts"+
     "<br>you receive calls from collection agencies or creditors for an account you don't have"+
     "<br>you receive notification from your bank, credit card or online business about a new account in your name, or added charges"+
     "<br>financial account statements show withdrawals or transfers you didn't make"+
     "<br>a creditor calls to say you've been approved or denied credit that you haven't applied for"+
+    
     "<br>8. If you receive calls from collection agencies or creditors for an account you don't have, you might be a victim of ___________.</html>",
     
     // Question 9
     "<html>phishing is a term used to describe a malicious individual or group of individuals who scam users. " +
     "They do so by sending e-mails or creating web pages that are designed to collect an individual's online bank, credit card, or other login information. " +
     "Because these e-mails and web pages look like legitimate companies users trust them and enter their personal information " +
+    
     "9. How can you identify if the email you received is a phishing email? </html>",
     
     //Question 10
-    "<html>The Traditional Password Advice" + "<br> <br>Has 12 Characters, Minimum: You need to choose a password that’s long enough. You should generally go for passwords that are a minimum of 12 to 14 characters in length. A longer password would be even better. "+
+    "<html>The Traditional Password Advice" + "<br> <br>Has 12 Characters, Minimum: You need to choose a password that¡¯s long enough. You should generally go for passwords that are a minimum of 12 to 14 characters in length. A longer password would be even better. "+
     "<br><br> Includes Numbers, Symbols, Capital Letters, and Lower-Case Letters: Use a mix of different types of characters to make the password harder to crack. " + 
-    "<br><br> Isn’t a Dictionary Word or Combination of Dictionary Words: Stay away from obvious dictionary words and combinations of dictionary words. Any word on its own is bad. Any combination of a few words, especially if they're obvious, is also bad. " + 
-    "<br><br>Doesn’t Rely on Obvious Substitutions: Don’t use common substitutions, either — for example, “H0use” isn’t strong just because you’ve replaced an o with a 0." +  
+    "<br><br> Isn¡¯t a Dictionary Word or Combination of Dictionary Words: Stay away from obvious dictionary words and combinations of dictionary words. Any word on its own is bad. Any combination of a few words, especially if they're obvious, is also bad. " + 
+    "<br><br>Doesn¡¯t Rely on Obvious Substitutions: Don¡¯t use common substitutions, either ? for example, ¡°H0use¡± isn¡¯t strong just because you¡¯ve replaced an o with a 0." +  
+    
     "10. Which of the following is a good password? </html>",
     
     
+    //Question 11
     "<html><i>11. Your Account is Suspended. We will ask for your password only once. Ignoring this message can cause eBay TKO delete your account forever.</i> What kind of unethical computer use is this?</html>"
   };
   
@@ -118,7 +142,7 @@ public class Frame2 {
   
   private void prepareGUI() {
     mainFrame = new JFrame("Java Quiz");
-    mainFrame.setSize(700, 850);
+    mainFrame.setSize(800, 1000);
     mainFrame.setLayout(new GridLayout(3, 3));
     //mainFrame.setLayout(null);
     mainFrame.setResizable(true);
