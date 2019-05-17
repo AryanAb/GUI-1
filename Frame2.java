@@ -25,8 +25,15 @@ public class Frame2 {
 
     private JPanel[] panels = new JPanel[11];
 
-    private String[] questions = {"1. How do you make effective passwords?",
-            "2. How can you get spyware?",
+    private String[] questions = {
+      //Question 1
+      "<html>The Traditional Password Advice" + "<br> <br>Has 12 Characters, Minimum: You need to choose a password that’s long enough. You should generally go for passwords that are a minimum of 12 to 14 characters in length. A longer password would be even better. "+
+      "<br><br> Includes Numbers, Symbols, Capital Letters, and Lower-Case Letters: Use a mix of different types of characters to make the password harder to crack. " + 
+      "<br><br> Isn’t a Dictionary Word or Combination of Dictionary Words: Stay away from obvious dictionary words and combinations of dictionary words. Any word on its own is bad. Any combination of a few words, especially if they're obvious, is also bad. " + 
+      "<br><br>Doesn’t Rely on Obvious Substitutions: Don’t use common substitutions, either — for example, “H0use” isn’t strong just because you’ve replaced an o with a 0." +
+      "<br> <br>1. How do you make effective passwords? </html>",
+            
+      "2. How can you get spyware?",
             "<html>3. Spyware is an unwanted software that infiltrates your computing device, stearing your internet usage data and sensitive information</html>",
     "<html>4. A ________ is a type of surveillance technology used to monitor and record each keystroke typed on a specific computer's keyboard.</html>",
             "5. There is no need to read the term and condition.",
@@ -69,10 +76,10 @@ public class Frame2 {
 
     private void prepareGUI() {
         mainFrame = new JFrame("Java Quiz");
-        mainFrame.setSize(400, 650);
+        mainFrame.setSize(700, 850);
         mainFrame.setLayout(new GridLayout(3, 3));
         //mainFrame.setLayout(null);
-        mainFrame.setResizable(false);
+        mainFrame.setResizable(true);
 
         headerLabel = new JLabel("", JLabel.CENTER);
         statusLabel = new JLabel("", JLabel.CENTER);
