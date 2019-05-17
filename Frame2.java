@@ -58,7 +58,7 @@ public class Frame2 {
             _continue9, _continue10, _continue11};
 
 
-    public Frame2() {
+    private Frame2() {
         prepareGUI();
     }
 
@@ -169,7 +169,7 @@ public class Frame2 {
         JRadioButton b1 = new JRadioButton(b1String);
         b1.setMnemonic(KeyEvent.VK_B);
         b1.setActionCommand(b1String);
-        b1.setSelected(true);
+        //b1.setSelected(true);
 
         JRadioButton b2 = new JRadioButton(b2String);
         b2.setMnemonic(KeyEvent.VK_C);
@@ -230,25 +230,25 @@ public class Frame2 {
         String b10String = "All of the above";
 
         JRadioButton b6 = new JRadioButton(b6String);
-        b1.setMnemonic(KeyEvent.VK_B);
-        b1.setActionCommand(b1String);
-        b1.setSelected(true);
+        b6.setMnemonic(KeyEvent.VK_B);
+        b6.setActionCommand(b1String);
+        //b6.setSelected(true);
 
         JRadioButton b7 = new JRadioButton(b7String);
-        b2.setMnemonic(KeyEvent.VK_C);
-        b2.setActionCommand(b2String);
+        b7.setMnemonic(KeyEvent.VK_C);
+        b7.setActionCommand(b2String);
 
         JRadioButton b8 = new JRadioButton(b8String);
-        b3.setMnemonic(KeyEvent.VK_D);
-        b3.setActionCommand(b3String);
+        b8.setMnemonic(KeyEvent.VK_D);
+        b8.setActionCommand(b3String);
 
         JRadioButton b9 = new JRadioButton(b9String);
-        b4.setMnemonic(KeyEvent.VK_R);
-        b4.setActionCommand(b4String);
+        b9.setMnemonic(KeyEvent.VK_R);
+        b9.setActionCommand(b4String);
 
         JRadioButton b10 = new JRadioButton(b10String);
-        b5.setMnemonic(KeyEvent.VK_E);
-        b5.setActionCommand(b5String);
+        b10.setMnemonic(KeyEvent.VK_E);
+        b10.setActionCommand(b5String);
 
 
         JButton submit2 = new JButton("Submit");
@@ -381,7 +381,7 @@ public class Frame2 {
         JRadioButton b11 = new JRadioButton(b11String);
         b11.setMnemonic(KeyEvent.VK_B);
         b11.setActionCommand(b11String);
-        b11.setSelected(true);
+        //b11.setSelected(true);
 
         JRadioButton b12 = new JRadioButton(b12String);
         b12.setMnemonic(KeyEvent.VK_C);
@@ -433,9 +433,6 @@ public class Frame2 {
         //===============================================================================================
 
         //=============================================Question 7========================================
-
-        //String _trueString1 = "True ";
-        //String _falseString1 = "False ";
 
         JRadioButton _true3 = new JRadioButton(_trueString1);
         _true3.setMnemonic(KeyEvent.VK_B);
@@ -495,7 +492,7 @@ public class Frame2 {
         JRadioButton b16 = new JRadioButton(b16String);
         b16.setMnemonic(KeyEvent.VK_B);
         b16.setActionCommand(b16String);
-        b16.setSelected(true);
+        //b16.setSelected(true);
 
         JRadioButton b17 = new JRadioButton(b17String);
         b17.setMnemonic(KeyEvent.VK_C);
@@ -556,24 +553,24 @@ public class Frame2 {
 
         JRadioButton b21 = new JRadioButton(b21String);
         b21.setMnemonic(KeyEvent.VK_B);
-        b21.setActionCommand(b16String);
-        b21.setSelected(true);
+        b21.setActionCommand(b21String);
+        //b21.setSelected(true);
 
         JRadioButton b22 = new JRadioButton(b22String);
         b22.setMnemonic(KeyEvent.VK_C);
-        b22.setActionCommand(b17String);
+        b22.setActionCommand(b22String);
 
         JRadioButton b23 = new JRadioButton(b23String);
         b23.setMnemonic(KeyEvent.VK_D);
-        b23.setActionCommand(b18String);
+        b23.setActionCommand(b23String);
 
         JRadioButton b24 = new JRadioButton(b24String);
         b24.setMnemonic(KeyEvent.VK_R);
-        b24.setActionCommand(b19String);
+        b24.setActionCommand(b24String);
 
         JRadioButton b25 = new JRadioButton(b25String);
         b25.setMnemonic(KeyEvent.VK_E);
-        b25.setActionCommand(b20String);
+        b25.setActionCommand(b25String);
 
 
         JButton submit10 = new JButton("Submit");
@@ -618,24 +615,24 @@ public class Frame2 {
 
         JRadioButton b26 = new JRadioButton(b26String);
         b26.setMnemonic(KeyEvent.VK_B);
-        b26.setActionCommand(b16String);
-        b26.setSelected(true);
+        b26.setActionCommand(b26String);
+        //b26.setSelected(true);
 
         JRadioButton b27 = new JRadioButton(b27String);
         b27.setMnemonic(KeyEvent.VK_C);
-        b27.setActionCommand(b17String);
+        b27.setActionCommand(b27String);
 
         JRadioButton b28 = new JRadioButton(b28String);
         b28.setMnemonic(KeyEvent.VK_D);
-        b28.setActionCommand(b18String);
+        b28.setActionCommand(b28String);
 
         JRadioButton b29 = new JRadioButton(b29String);
         b29.setMnemonic(KeyEvent.VK_R);
-        b29.setActionCommand(b19String);
+        b29.setActionCommand(b29String);
 
         JRadioButton b30 = new JRadioButton(b30String);
         b30.setMnemonic(KeyEvent.VK_E);
-        b30.setActionCommand(b20String);
+        b30.setActionCommand(b30String);
 
 
         JButton submit11 = new JButton("Submit");
@@ -650,7 +647,7 @@ public class Frame2 {
         controlPanel11.add(submit11);
 
         _continue11.setEnabled(false);
-        controlPanel11.add(_continue11);
+       // controlPanel11.add(_continue11);
 
         ButtonGroup group11 = new ButtonGroup();
         group11.add(b26);
@@ -688,7 +685,7 @@ public class Frame2 {
                 isCorrect = true;
                 //System.out.println("Correct Radio Button Selected");
             } else if(command.equals("True")){
-                System.out.println("Correct Answer Selected");
+                //System.out.println("Correct Answer Selected");
                 isCorrect = true;
             }
             if(command.equals("False ")){
@@ -698,15 +695,16 @@ public class Frame2 {
             }
             if(command.equals("gh1ghiph!@iAhg2!")){
                 isCorrect = true;
+                System.out.println("Correct answer selected");
             }
             if(command.equals("Phishing")){
                 isCorrect = true;
             }
             // +++++++++++++++++++++++++++++++++++++++++++fix this++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-            //if(!command.equals("All of the above") && !command.equals("Submit") && !command.equals("True")){
-              //  isCorrect = false;
+            if(!command.equals("All of the above") && !command.equals("Submit") && !command.equals("True") && !command.equals("False ") && !command.equals("gh1ghiph!@iAhg2!") && !command.equals("Phishing")){
+              isCorrect = false;
                 //System.out.println("Wrong Answer Selected");
-            //}
+            }
             if (command.equals("Submit") && isCorrect) {
                 mainFrame.add(statusLabel);
                 statusLabel.setText("Correct!");
@@ -720,6 +718,7 @@ public class Frame2 {
             }
             if (command.equals("Continue")) {
                 t1.setText("Enter your answer here");
+                t2.setText("Enter your answer here");
                 mainFrame.remove(statusLabel);
                 mainFrame.repaint();
                 headerLabel.setText(questions[panelIndex + 1]);
