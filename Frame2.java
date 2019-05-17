@@ -17,6 +17,12 @@ public class Frame2 {
   private JPanel controlPanel9;
   private JPanel controlPanel10;
   private JPanel controlPanel11;
+  /*
+  private JPanel controlPanel12;
+  private JPanel controlPanel13;
+  private JPanel controlPanel14;
+  private JPanel controlPanel15;
+  */
   
   private JTextField t1 = new JTextField("Type your answer here");
   private JTextField t2 = new JTextField("Type your answer here");
@@ -26,7 +32,7 @@ public class Frame2 {
   private JPanel[] panels = new JPanel[11];
   
   private String[] questions = {
-    //Question 1
+    //Question 1 Joon's Question (http://www2.connectseward.org/shs/students/students17/evanNottingham/passwordSecurity/create.html)
     "<html>The Traditional Password Advice" + "<br> <br>Has 12 Characters, Minimum: You need to choose a password that¡¯s long enough. You should generally go for passwords that are a minimum of 12 to 14 characters in length. A longer password would be even better. "+
     "<br><br> Includes Numbers, Symbols, Capital Letters, and Lower-Case Letters: Use a mix of different types of characters to make the password harder to crack. " + 
     "<br><br> Isn¡¯t a Dictionary Word or Combination of Dictionary Words: Stay away from obvious dictionary words and combinations of dictionary words. Any word on its own is bad. Any combination of a few words, especially if they're obvious, is also bad. " + 
@@ -34,7 +40,7 @@ public class Frame2 {
     
     "<br> <br>1. How do you make effective passwords? </html>",
     
-    //Question 2
+    //Question 2 Aryan's Question (https://us.norton.com/internetsecurity-how-to-catch-spyware-before-it-snags-you.html )
     "<html><br>Spyware can affect PCs, Macs, and iOS or Android devices. Although Windows operating systems may be more susceptible to attacks, attackers are becoming better at infiltrating Apple¡¯s operating systems as well."+
     "<br>Some of the most common ways your computer can become infected with spyware include these:"+
     "<br>Accepting a prompt or pop-up without reading it first"+
@@ -44,12 +50,12 @@ public class Frame2 {
     
     "<br><br>2. How can you get spyware?</html>",
     
-    //Question 3
+    //Question 3 Joon's question (https://us.norton.com/internetsecurity-how-to-catch-spyware-before-it-snags-you.html)
     "<html><br>Spyware can affect PCs, Macs, and iOS or Android devices. Although Windows operating systems may be more susceptible to attacks, attackers are becoming better at infiltrating Apple¡¯s operating systems as well."+
     
     "<br><br>3. Spyware is an unwanted software that infiltrates your computing device, stearing your internet usage data and sensitive information</html>",
     
-    //Question 4
+    //Question 4 Aryan's question (https://searchsecurity.techtarget.com/definition/keylogger)
     "<html><br>A keylogger, sometimes called a keystroke logger or system monitor, is a type of surveillance technology used to monitor and record each keystroke typed on a specific computer's keyboard."+
     "<br>Keylogger software is also available for use on smartphones, such as Apple's iPhone and Android devices."+
     "<br>A hardware-based keylogger is a small device that serves as a connector between the computer keyboard and the computer."+
@@ -60,7 +66,7 @@ public class Frame2 {
     //Question 5 Aryan's Question
     "5. There is no need to read the term and condition.",
     
-    //Question 6
+    //Question 6 Joon's question (https://us.norton.com/internetsecurity-how-to-catch-spyware-before-it-snags-you.html)
     "<html><br>Spyware can affect PCs, Macs, and iOS or Android devices. Although Windows operating systems may be more susceptible to attacks, attackers are becoming better at infiltrating Apple¡¯s operating systems as well."+
     "<br>Some of the most common ways your computer can become infected with spyware include these:"+
     "<br>Accepting a prompt or pop-up without reading it first"+
@@ -78,7 +84,7 @@ public class Frame2 {
     
     "<br><br>7. Piracy is unethical</html>",
     
-    // Question 8
+    // Question 8 Joon's question (https://www.ontario.ca/page/how-avoid-or-recover-identity-theft)
     "<html><br>Your personal information can be stolen without your knowledge. " +
     "<br>Many people find out they¡¯ve been the victim of identity theft when they¡¯re denied a loan, job or rent unexpectedly because of a credit check. "+
     "<br>This is why it¡¯s very important to check your credit report once a year for errors or strange activities. "+
@@ -91,14 +97,14 @@ public class Frame2 {
     
     "<br>8. If you receive calls from collection agencies or creditors for an account you don't have, you might be a victim of ___________.</html>",
     
-    // Question 9
+    // Question 9 Aryan's question (https://www.computerhope.com/jargon/p/phishing.htm)
     "<html>phishing is a term used to describe a malicious individual or group of individuals who scam users. " +
     "They do so by sending e-mails or creating web pages that are designed to collect an individual's online bank, credit card, or other login information. " +
     "Because these e-mails and web pages look like legitimate companies users trust them and enter their personal information " +
     
     "9. How can you identify if the email you received is a phishing email? </html>",
     
-    //Question 10
+    //Question 10 Joon's question (https://www.howtogeek.com/195430/how-to-create-a-strong-password-and-remember-it/)
     "<html>The Traditional Password Advice" + "<br> <br>Has 12 Characters, Minimum: You need to choose a password that¡¯s long enough. You should generally go for passwords that are a minimum of 12 to 14 characters in length. A longer password would be even better. "+
     "<br><br> Includes Numbers, Symbols, Capital Letters, and Lower-Case Letters: Use a mix of different types of characters to make the password harder to crack. " + 
     "<br><br> Isn¡¯t a Dictionary Word or Combination of Dictionary Words: Stay away from obvious dictionary words and combinations of dictionary words. Any word on its own is bad. Any combination of a few words, especially if they're obvious, is also bad. " + 
@@ -107,8 +113,33 @@ public class Frame2 {
     "10. Which of the following is a good password? </html>",
     
     
-    //Question 11
-    "<html><i>11. Your Account is Suspended. We will ask for your password only once. Ignoring this message can cause eBay TKO delete your account forever.</i> What kind of unethical computer use is this?</html>"
+    //Question 11 Aryan's question (https://www.computerhope.com/jargon/p/phishing.htm)
+    "<html><i>11. Your Account is Suspended. We will ask for your password only once. Ignoring this message can cause eBay TKO delete your account forever.</i> What kind of unethical computer use is this?</html>",
+    
+    //Question 12 Ivan's question (www.mpsaz.org/eva/staff/ksrandle/class1/files/1-importance_of_computer_ethics.ppsx)
+    "<html><br>What is computer ethics? Ethics is a set of moral principles that govern the behaviour of a group or individual. Therefore, computer ethics is set of moral principles that regulate the use of computers."+ 
+    "<br>Some common issues of computer ethics include intellectual property rights( such as copyrighted electronic content), privacy concerns, and how computers affect society. "+
+    "<br>Ethical actions are things that don¡¯t cause harm to you or other people. "+
+    
+    "<br><br>12. Computer ethics something that regulates the use of computers? </html>" ,
+    
+    //Question 13 Ivan's question (www.mpsaz.org/eva/staff/ksrandle/class1/files/1-importance_of_computer_ethics.ppsx)
+    "<html>It is unethical to use a computer to cause damage to your own digital property or someone else¡¯s"+
+    "<br>it is wrong to use a computer to steal someone's personal information. Manipulating or destroying files of other users is ethically wrong."+
+   
+    "<br> <br>13. Hacking ethical?</html>",
+
+    //Question 14 Ivan's question (www.mpsaz.org/eva/staff/ksrandle/class1/files/1-importance_of_computer_ethics.ppsx)
+    "<html><br>Rules of tech ethics: " + 
+    "<br>Privacy - I will protect my privacy and other people privacy " + 
+    "<br>Property - I will protect my property and other people property " + 
+    "<br>Appropriate Use - I will use technology in constructive ways and in ways that do not break rules set by government" +
+    "<br><br>What is ethical?",
+    
+    //Question 15 Ivan's question (www.mpsaz.org/eva/staff/ksrandle/class1/files/1-importance_of_computer_ethics.ppsx)
+    "<html>It is unethical to write programs, which on execution lead to stealing, copying or gaining unauthorized access to other users' data."+
+    "<br>Being involved in practices like hacking, spamming, phishing or cyber bullying does not conform to computer ethics."+
+    "<br>How someone accesses someone else's property?</html>"
   };
   
   private int panelIndex = 0;
@@ -217,10 +248,37 @@ public class Frame2 {
     controlPanel10.setVisible(false);
     panels[9] = controlPanel10;
     
+    //Question 11
     controlPanel11 = new JPanel();
     controlPanel11.setLayout(new BoxLayout(controlPanel11, BoxLayout.PAGE_AXIS));
     controlPanel11.setVisible(false);
     panels[10] = controlPanel11;
+    
+    /*
+    //Question 12
+    controlPanel12 = new JPanel();
+    controlPanel12.setLayout(new BoxLayout(controlPanel11, BoxLayout.PAGE_AXIS));
+    controlPanel12.setVisible(false);
+    panels[11] = controlPanel12;
+    
+    //Question13
+    controlPanel13 = new JPanel();
+    controlPanel13.setLayout(new BoxLayout(controlPanel11, BoxLayout.PAGE_AXIS));
+    controlPanel13.setVisible(false);
+    panels[12] = controlPanel13;
+    
+    //Question 14
+    controlPanel14 = new JPanel();
+    controlPanel14.setLayout(new BoxLayout(controlPanel11, BoxLayout.PAGE_AXIS));
+    controlPanel14.setVisible(false);
+    panels[13] = controlPanel14;
+    
+    //Question15
+    controlPanel15 = new JPanel();
+    controlPanel15.setLayout(new BoxLayout(controlPanel11, BoxLayout.PAGE_AXIS));
+    controlPanel15.setVisible(false);
+    panels[14] = controlPanel15;
+    */
     
     mainFrame.add(headerLabel);
     mainFrame.add(controlPanel);
