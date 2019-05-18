@@ -3,10 +3,12 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Frame2 {
+    // create the frame, header and footer
     private JFrame mainFrame;
     private JLabel headerLabel;
     private JLabel statusLabel;
 
+    // create the panels
     private JPanel controlPanel;
     private JPanel controlPanel2;
     private JPanel controlPanel3;
@@ -18,21 +20,26 @@ public class Frame2 {
     private JPanel controlPanel9;
     private JPanel controlPanel10;
     private JPanel controlPanel11;
-  /*
-  private JPanel controlPanel12;
-  private JPanel controlPanel13;
-  private JPanel controlPanel14;
-  private JPanel controlPanel15;
-  */
-  private JPanel controlPanel16;
+    private JPanel controlPanel12;
+    private JPanel controlPanel13;
+    private JPanel controlPanel14;
+    private JPanel controlPanel15;
+    private JPanel controlPanel16;
 
+    // create text boxes
     private JTextField t1 = new JTextField("Type your answer here");
     private JTextField t2 = new JTextField("Type your answer here");
+    private JTextField t3 = new JTextField("Type your answer here");
+    private JTextField t4 = new JTextField("Type your answer here");
+    private JTextField t5 = new JTextField("Type your answer here");
 
+    // checks if user answered correctly
     private boolean isCorrect = false;
 
-    private JPanel[] panels = new JPanel[12];
+    // an array of type JPanel which contains all the panels with the questions in them
+    private JPanel[] panels = new JPanel[16];
 
+    // an array of type String which has all the questions
     private String[] questions = {
             //Question 1 Joon's Question (http://www2.connectseward.org/shs/students/students17/evanNottingham/passwordSecurity/create.html)
             "<html>The Traditional Password Advice" + "<br> <br>Has 12 Characters, Minimum: You need to choose a password that’s long enough. You should generally go for passwords that are a minimum of 12 to 14 characters in length. A longer password would be even better. "+
@@ -44,11 +51,11 @@ public class Frame2 {
 
             //Question 2 Aryan's Question (https://us.norton.com/internetsecurity-how-to-catch-spyware-before-it-snags-you.html )
             "<html><br>Spyware can affect PCs, Macs, and iOS or Android devices. Although Windows operating systems may be more susceptible to attacks, attackers are becoming better at infiltrating Apple’s operating systems as well."+
-                    "<br>Some of the most common ways your computer can become infected with spyware include these:"+
-                    "<br>Accepting a prompt or pop-up without reading it first"+
-                    "<br>Downloading software from an unreliable source"+
-                    "<br>Opening email attachments from unknown senders"+
-                    "<br>Pirating media such as movies, music, or games"+
+                    "<br><br>Some of the most common ways your computer can become infected with spyware include these:"+
+                    "<br><br>Accepting a prompt or pop-up without reading it first"+
+                    "<br><br>Downloading software from an unreliable source"+
+                    "<br><br>Opening email attachments from unknown senders"+
+                    "<br><br>Pirating media such as movies, music, or games"+
 
                     "<br><br>2. How can you get spyware?</html>",
 
@@ -59,9 +66,9 @@ public class Frame2 {
 
             //Question 4 Aryan's question (https://searchsecurity.techtarget.com/definition/keylogger)
             "<html><br>A keylogger, sometimes called a keystroke logger or system monitor, is a type of surveillance technology used to monitor and record each keystroke typed on a specific computer's keyboard."+
-                    "<br>Keylogger software is also available for use on smartphones, such as Apple's iPhone and Android devices."+
-                    "<br>A hardware-based keylogger is a small device that serves as a connector between the computer keyboard and the computer."+
-                    "<br>The device is designed to resemble an ordinary keyboard PS/2 connector,making it relatively easy for someone who wants to monitor a user's behavior to hide such a device."+
+                    "<br><br>Keylogger software is also available for use on smartphones, such as Apple's iPhone and Android devices."+
+                    "<br><br>A hardware-based keylogger is a small device that serves as a connector between the computer keyboard and the computer."+
+                    "<br><br>The device is designed to resemble an ordinary keyboard PS/2 connector,making it relatively easy for someone who wants to monitor a user's behavior to hide such a device."+
 
                     "<br><br>4. A ________ is a type of surveillance technology used to monitor and record each keystroke typed on a specific computer's keyboard.</html>",
 
@@ -70,19 +77,19 @@ public class Frame2 {
 
             //Question 6 Joon's question (https://us.norton.com/internetsecurity-how-to-catch-spyware-before-it-snags-you.html)
             "<html><br>Spyware can affect PCs, Macs, and iOS or Android devices. Although Windows operating systems may be more susceptible to attacks, attackers are becoming better at infiltrating Apple’s operating systems as well."+
-                    "<br>Some of the most common ways your computer can become infected with spyware include these:"+
-                    "<br>Accepting a prompt or pop-up without reading it first"+
-                    "<br>Downloading software from an unreliable source"+
-                    "<br>Opening email attachments from unknown senders"+
-                    "<br>Pirating media such as movies, music, or games"+
+                    "<br><br>Some of the most common ways your computer can become infected with spyware include these:"+
+                    "<br><br>Accepting a prompt or pop-up without reading it first"+
+                    "<br><br>Downloading software from an unreliable source"+
+                    "<br><br>Opening email attachments from unknown senders"+
+                    "<br><br>Pirating media such as movies, music, or games"+
 
                     "<br><br>6. How can you prevent spyware?</html>",
 
             //Question 7 Ivan's Question
             "<html><br>Commandment 6: Refrain from copying software or buying pirated copies. Pay for software unless it is free" +
-                    "<br>Explanation: Like any other artistic or literary work, software is copyrighted. A piece of code is the original work of the individual who created it. It is copyrighted in his/her name. "+
-                    "<br>In case of a developer writing software for the organization she works for, the organization holds the copyright for it. Copyright holds true unless its creators announce it is not. "+
-                    "<br>Obtaining illegal copies of copyrighted software is unethical and also encourages others to make copies illegally."+
+                    "<br><br>Explanation: Like any other artistic or literary work, software is copyrighted. A piece of code is the original work of the individual who created it. It is copyrighted in his/her name. "+
+                    "<br><br>In case of a developer writing software for the organization she works for, the organization holds the copyright for it. Copyright holds true unless its creators announce it is not. "+
+                    "<br><br>Obtaining illegal copies of copyrighted software is unethical and also encourages others to make copies illegally."+
 
                     "<br><br>7. Piracy is unethical</html>",
 
@@ -123,31 +130,32 @@ public class Frame2 {
                     "<br>Some common issues of computer ethics include intellectual property rights( such as copyrighted electronic content), privacy concerns, and how computers affect society. "+
                     "<br>Ethical actions are things that don’t cause harm to you or other people. "+
 
-                    "<br><br>12. Computer ethics something that regulates the use of computers? </html>" ,
+                    "<br><br>12. computer ethics is set of moral principles that ___________ the use of computers. </html>" ,
 
             //Question 13 Ivan's question (www.mpsaz.org/eva/staff/ksrandle/class1/files/1-importance_of_computer_ethics.ppsx)
             "<html>It is unethical to use a computer to cause damage to your own digital property or someone else’s"+
                     "<br>it is wrong to use a computer to steal someone's personal information. Manipulating or destroying files of other users is ethically wrong."+
 
-                    "<br> <br>13. Hacking ethical?</html>",
+                    "<br> <br>13. Hacking is ethical.</html>",
 
             //Question 14 Ivan's question (www.mpsaz.org/eva/staff/ksrandle/class1/files/1-importance_of_computer_ethics.ppsx)
             "<html><br>Rules of tech ethics: " +
-                    "<br>Privacy - I will protect my privacy and other people privacy " +
-                    "<br>Property - I will protect my property and other people property " +
+                    "<br>Privacy - I will protect my privacy and other people's privacy " +
+                    "<br>Property - I will protect my property and other people's property " +
                     "<br>Appropriate Use - I will use technology in constructive ways and in ways that do not break rules set by government" +
-                    "<br><br>What is ethical?",
+                    "<br><br>State the 3 rules of tech ethics.",
 
             //Question 15 Ivan's question (www.mpsaz.org/eva/staff/ksrandle/class1/files/1-importance_of_computer_ethics.ppsx)
             "<html>It is unethical to write programs, which on execution lead to stealing, copying or gaining unauthorized access to other users' data."+
                     "<br>Being involved in practices like hacking, spamming, phishing or cyber bullying does not conform to computer ethics."+
-                    "<br>How someone accesses someone else's property?</html>",
+                    "<br>How can someone access someone else's property?</html>",
+            "N/A"
     };
 
+    // index of the current panel
     private int panelIndex = 0;
 
-    //String textValue= "";
-
+    // create continue buttons for each panel
     private JButton _continue = new JButton("Continue");
     private JButton _continue2 = new JButton("Continue");
     private JButton _continue3 = new JButton("Continue");
@@ -162,10 +170,13 @@ public class Frame2 {
     private JButton _continue12 = new JButton("Continue");
     private JButton _continue13 = new JButton("Continue");
     private JButton _continue14 = new JButton("Continue");
+    private JButton _continue15 = new JButton("Continue");
 
+    // an array of type JButton which contains all the continue buttons
     private JButton[] continueButtons = {_continue, _continue2, _continue3, _continue4, _continue5, _continue6, _continue7, _continue8,
-            _continue9, _continue10, _continue11, _continue12, _continue13, _continue14};
+            _continue9, _continue10, _continue11, _continue12, _continue13, _continue14, _continue15};
 
+    // create submit buttons
     private JButton submit = new JButton("Submit");
     private JButton submit2 = new JButton("Submit");
     private JButton submit3 = new JButton("Submit");
@@ -177,9 +188,15 @@ public class Frame2 {
     private JButton submit9 = new JButton("Submit");
     private JButton submit10 = new JButton("Submit");
     private JButton submit11 = new JButton("Submit");
+    private JButton submit12 = new JButton("Submit");
+    private JButton submit13 = new JButton("Submit");
+    private JButton submit14 = new JButton("Submit");
+    private JButton submit15 = new JButton("Submit");
 
-    private JButton[] submitButtons = {submit, submit2, submit3, submit4, submit5, submit6, submit7, submit8, submit9, submit10, submit11};
+    // an array of type JButton which contains all the submit buttons
+    private JButton[] submitButtons = {submit, submit2, submit3, submit4, submit5, submit6, submit7, submit8, submit9, submit10, submit11, submit12, submit13, submit14, submit15};
 
+    // score of the user
     int score = 0;
 
     private Frame2() {
@@ -192,12 +209,13 @@ public class Frame2 {
     }
 
     private void prepareGUI() {
+        // initialize the window
         mainFrame = new JFrame("Java Quiz");
         mainFrame.setSize(800, 1000);
         mainFrame.setLayout(new GridLayout(3, 3));
-        //mainFrame.setLayout(null);
         mainFrame.setResizable(true);
 
+        // initialize the header and the footer
         headerLabel = new JLabel("", JLabel.CENTER);
         statusLabel = new JLabel("", JLabel.CENTER);
         statusLabel.setSize(350, 100);
@@ -274,7 +292,7 @@ public class Frame2 {
         controlPanel11.setVisible(false);
         panels[10] = controlPanel11;
 
-    /*
+
     //Question 12
     controlPanel12 = new JPanel();
     controlPanel12.setLayout(new BoxLayout(controlPanel12, BoxLayout.PAGE_AXIS));
@@ -298,12 +316,11 @@ public class Frame2 {
     controlPanel15.setLayout(new BoxLayout(controlPanel15, BoxLayout.PAGE_AXIS));
     controlPanel15.setVisible(false);
     panels[14] = controlPanel15;
-    */
 
     controlPanel16 = new JPanel();
     controlPanel16.setLayout(new BoxLayout(controlPanel16, BoxLayout.PAGE_AXIS));
     controlPanel16.setVisible(false);
-    panels[11] = controlPanel16;
+    panels[15] = controlPanel16;
 
         mainFrame.add(headerLabel);
         mainFrame.add(controlPanel);
@@ -316,33 +333,35 @@ public class Frame2 {
         // ===============================Question 1=================================================
         headerLabel.setText(questions[panelIndex]);
 
+        // multiple choices
         String b1String = "Have at least 12 characters";
         String b2String = "Do not rely on obvious substitution (e.g. p@ssw0rd)";
         String b3String = "Include numbers, symbols, capital letters, and lower case letters";
         String b4String = "Do not use obvious words (e.g. password)";
         String b5String = "All of the above";
 
+        // create radio buttons
         JRadioButton b1 = new JRadioButton(b1String);
-        b1.setMnemonic(KeyEvent.VK_B);
+        b1.setMnemonic(KeyEvent.VK_A); // set A as an alt key (press Alt-A to see the effect)
         b1.setActionCommand(b1String);
-        //b1.setSelected(true);
 
         JRadioButton b2 = new JRadioButton(b2String);
-        b2.setMnemonic(KeyEvent.VK_C);
+        b2.setMnemonic(KeyEvent.VK_B);
         b2.setActionCommand(b2String);
 
         JRadioButton b3 = new JRadioButton(b3String);
-        b3.setMnemonic(KeyEvent.VK_D);
+        b3.setMnemonic(KeyEvent.VK_C);
         b3.setActionCommand(b3String);
 
         JRadioButton b4 = new JRadioButton(b4String);
-        b4.setMnemonic(KeyEvent.VK_R);
+        b4.setMnemonic(KeyEvent.VK_D);
         b4.setActionCommand(b4String);
 
         JRadioButton b5 = new JRadioButton(b5String);
         b5.setMnemonic(KeyEvent.VK_E);
         b5.setActionCommand(b5String);
 
+        // add the buttons to the panel
         controlPanel.add(b1);
         controlPanel.add(b2);
         controlPanel.add(b3);
@@ -356,6 +375,7 @@ public class Frame2 {
 
         mainFrame.setVisible(true);
 
+        // group the buttons so no more than 1 button could be selected at one time
         ButtonGroup group = new ButtonGroup();
         group.add(b1);
         group.add(b2);
@@ -363,7 +383,7 @@ public class Frame2 {
         group.add(b4);
         group.add(b5);
 
-
+        // add ecent listeneres
         b1.addActionListener(new ButtonClickListener());
         b2.addActionListener(new ButtonClickListener());
         b3.addActionListener(new ButtonClickListener());
@@ -383,20 +403,20 @@ public class Frame2 {
         String b10String = "All of the above";
 
         JRadioButton b6 = new JRadioButton(b6String);
-        b6.setMnemonic(KeyEvent.VK_B);
+        b6.setMnemonic(KeyEvent.VK_A);
         b6.setActionCommand(b1String);
         //b6.setSelected(true);
 
         JRadioButton b7 = new JRadioButton(b7String);
-        b7.setMnemonic(KeyEvent.VK_C);
+        b7.setMnemonic(KeyEvent.VK_B);
         b7.setActionCommand(b2String);
 
         JRadioButton b8 = new JRadioButton(b8String);
-        b8.setMnemonic(KeyEvent.VK_D);
+        b8.setMnemonic(KeyEvent.VK_C);
         b8.setActionCommand(b3String);
 
         JRadioButton b9 = new JRadioButton(b9String);
-        b9.setMnemonic(KeyEvent.VK_R);
+        b9.setMnemonic(KeyEvent.VK_D);
         b9.setActionCommand(b4String);
 
         JRadioButton b10 = new JRadioButton(b10String);
@@ -435,17 +455,20 @@ public class Frame2 {
 
         //==================================Question 3===================================================
 
+        // True and False string
         String _trueString = "True";
         String _falseString = "False";
 
+        // create radio buttons
         JRadioButton _true = new JRadioButton(_trueString);
-        _true.setMnemonic(KeyEvent.VK_E);
+        _true.setMnemonic(KeyEvent.VK_A); // press Alt-A to see the effect
         _true.setActionCommand(_trueString);
 
         JRadioButton _false = new JRadioButton(_falseString);
-        _false.setMnemonic(KeyEvent.VK_C);
+        _false.setMnemonic(KeyEvent.VK_B);
         _false.setActionCommand(_falseString);
 
+        // add buttons to the panel
         controlPanel3.add(_true);
         controlPanel3.add(_false);
 
@@ -454,10 +477,12 @@ public class Frame2 {
         _continue3.setEnabled(false);
         controlPanel3.add(_continue3);
 
+        // group the buttons so no more than one button could be selected at a time
         ButtonGroup group3 = new ButtonGroup();
         group3.add(_true);
         group3.add(_false);
 
+        // add event listeners
         _true.addActionListener(new ButtonClickListener());
         _false.addActionListener(new ButtonClickListener());
         submitButtons[2].addActionListener(new ButtonClickListener());
@@ -467,15 +492,19 @@ public class Frame2 {
 
         //======================================Question 4===============================================
 
+        // create the text box
         t1.setMaximumSize(new Dimension(500, 45));
 
+        // add the text box to the panel
         controlPanel4.add(t1);
 
+        // add buttons to the panel
         controlPanel4.add(submitButtons[3]);
 
         _continue4.setEnabled(false);
         controlPanel4.add(_continue4);
 
+        // add event listener
         submitButtons[3].addActionListener(new ButtonClickListener());
         _continue4.addActionListener(new ButtonClickListener());
 
@@ -487,11 +516,11 @@ public class Frame2 {
         String _falseString1 = "False ";
 
         JRadioButton _true2 = new JRadioButton(_trueString1);
-        _true2.setMnemonic(KeyEvent.VK_B);
+        _true2.setMnemonic(KeyEvent.VK_A);
         _true2.setActionCommand(_trueString1);
 
         JRadioButton _false2 = new JRadioButton(_falseString1);
-        _false2.setMnemonic(KeyEvent.VK_D);
+        _false2.setMnemonic(KeyEvent.VK_B);
         _false2.setActionCommand(_falseString1);
 
         controlPanel5.add(_true2);
@@ -523,20 +552,20 @@ public class Frame2 {
         String b15String = "All of the above";
 
         JRadioButton b11 = new JRadioButton(b11String);
-        b11.setMnemonic(KeyEvent.VK_B);
+        b11.setMnemonic(KeyEvent.VK_A);
         b11.setActionCommand(b11String);
         //b11.setSelected(true);
 
         JRadioButton b12 = new JRadioButton(b12String);
-        b12.setMnemonic(KeyEvent.VK_C);
+        b12.setMnemonic(KeyEvent.VK_B);
         b12.setActionCommand(b12String);
 
         JRadioButton b13 = new JRadioButton(b13String);
-        b13.setMnemonic(KeyEvent.VK_D);
+        b13.setMnemonic(KeyEvent.VK_C);
         b13.setActionCommand(b13String);
 
         JRadioButton b14 = new JRadioButton(b14String);
-        b14.setMnemonic(KeyEvent.VK_R);
+        b14.setMnemonic(KeyEvent.VK_D);
         b14.setActionCommand(b14String);
 
         JRadioButton b15 = new JRadioButton(b15String);
@@ -576,11 +605,11 @@ public class Frame2 {
         //=============================================Question 7========================================
 
         JRadioButton _true3 = new JRadioButton(_trueString1);
-        _true3.setMnemonic(KeyEvent.VK_B);
+        _true3.setMnemonic(KeyEvent.VK_A);
         _true3.setActionCommand(_trueString);
 
         JRadioButton _false3 = new JRadioButton(_falseString1);
-        _false3.setMnemonic(KeyEvent.VK_D);
+        _false3.setMnemonic(KeyEvent.VK_B);
         _false3.setActionCommand(_falseString);
 
         controlPanel7.add(_true3);
@@ -627,20 +656,20 @@ public class Frame2 {
         String b20String = "All of the above";
 
         JRadioButton b16 = new JRadioButton(b16String);
-        b16.setMnemonic(KeyEvent.VK_B);
+        b16.setMnemonic(KeyEvent.VK_A);
         b16.setActionCommand(b16String);
         //b16.setSelected(true);
 
         JRadioButton b17 = new JRadioButton(b17String);
-        b17.setMnemonic(KeyEvent.VK_C);
+        b17.setMnemonic(KeyEvent.VK_B);
         b17.setActionCommand(b17String);
 
         JRadioButton b18 = new JRadioButton(b18String);
-        b18.setMnemonic(KeyEvent.VK_D);
+        b18.setMnemonic(KeyEvent.VK_C);
         b18.setActionCommand(b18String);
 
         JRadioButton b19 = new JRadioButton(b19String);
-        b19.setMnemonic(KeyEvent.VK_R);
+        b19.setMnemonic(KeyEvent.VK_D);
         b19.setActionCommand(b19String);
 
         JRadioButton b20 = new JRadioButton(b20String);
@@ -686,20 +715,20 @@ public class Frame2 {
         String b25String = "p@55word";
 
         JRadioButton b21 = new JRadioButton(b21String);
-        b21.setMnemonic(KeyEvent.VK_B);
+        b21.setMnemonic(KeyEvent.VK_A);
         b21.setActionCommand(b21String);
         //b21.setSelected(true);
 
         JRadioButton b22 = new JRadioButton(b22String);
-        b22.setMnemonic(KeyEvent.VK_C);
+        b22.setMnemonic(KeyEvent.VK_B);
         b22.setActionCommand(b22String);
 
         JRadioButton b23 = new JRadioButton(b23String);
-        b23.setMnemonic(KeyEvent.VK_D);
+        b23.setMnemonic(KeyEvent.VK_C);
         b23.setActionCommand(b23String);
 
         JRadioButton b24 = new JRadioButton(b24String);
-        b24.setMnemonic(KeyEvent.VK_R);
+        b24.setMnemonic(KeyEvent.VK_D);
         b24.setActionCommand(b24String);
 
         JRadioButton b25 = new JRadioButton(b25String);
@@ -745,20 +774,20 @@ public class Frame2 {
         String b30String = "All of the above ";
 
         JRadioButton b26 = new JRadioButton(b26String);
-        b26.setMnemonic(KeyEvent.VK_B);
+        b26.setMnemonic(KeyEvent.VK_A);
         b26.setActionCommand(b26String);
         //b26.setSelected(true);
 
         JRadioButton b27 = new JRadioButton(b27String);
-        b27.setMnemonic(KeyEvent.VK_C);
+        b27.setMnemonic(KeyEvent.VK_B);
         b27.setActionCommand(b27String);
 
         JRadioButton b28 = new JRadioButton(b28String);
-        b28.setMnemonic(KeyEvent.VK_D);
+        b28.setMnemonic(KeyEvent.VK_C);
         b28.setActionCommand(b28String);
 
         JRadioButton b29 = new JRadioButton(b29String);
-        b29.setMnemonic(KeyEvent.VK_R);
+        b29.setMnemonic(KeyEvent.VK_D);
         b29.setActionCommand(b29String);
 
         JRadioButton b30 = new JRadioButton(b30String);
@@ -795,10 +824,82 @@ public class Frame2 {
 
         //===============================================================================================
 
-        //===============================================================================================
+        //=============================================Question 12=======================================
 
-        //JLabel score1 = new JLabel("Your score is " + score, JLabel.CENTER);
-        //controlPanel16.add(score1);
+        t3.setMaximumSize(new Dimension(500, 45));
+
+        controlPanel12.add(t3);
+
+        controlPanel12.add(submitButtons[11]);
+
+        _continue12.setEnabled(false);
+        controlPanel12.add(_continue12);
+
+        submitButtons[11].addActionListener(new ButtonClickListener());
+        _continue12.addActionListener(new ButtonClickListener());
+
+        //=================================================================================================
+
+        //=========================================Question 13=============================================
+
+        JRadioButton _true4 = new JRadioButton(_trueString1);
+        _true2.setMnemonic(KeyEvent.VK_A);
+        _true2.setActionCommand(_trueString1);
+
+        JRadioButton _false4 = new JRadioButton(_falseString1);
+        _false2.setMnemonic(KeyEvent.VK_B);
+        _false2.setActionCommand(_falseString1);
+
+        controlPanel13.add(_true4);
+        controlPanel13.add(_false4);
+
+        controlPanel13.add(submitButtons[12]);
+
+        _continue13.setEnabled(false);
+        controlPanel13.add(_continue13);
+
+        ButtonGroup group13 = new ButtonGroup();
+        group13.add(_true4);
+        group13.add(_false4);
+
+        _true4.addActionListener(new ButtonClickListener());
+        _false4.addActionListener(new ButtonClickListener());
+        submitButtons[12].addActionListener(new ButtonClickListener());
+        _continue13.addActionListener(new ButtonClickListener());
+
+        //==================================================================================================
+
+        //=============================================Question 14==========================================
+
+        t4.setMaximumSize(new Dimension(500, 45));
+
+        controlPanel14.add(t4);
+
+        controlPanel14.add(submitButtons[13]);
+
+        _continue14.setEnabled(false);
+        controlPanel14.add(_continue14);
+
+        submitButtons[13].addActionListener(new ButtonClickListener());
+        _continue14.addActionListener(new ButtonClickListener());
+
+        //==================================================================================================
+
+        //===============================================Question 15========================================
+
+        t5.setMaximumSize(new Dimension(500, 45));
+
+        controlPanel15.add(t5);
+
+        controlPanel15.add(submitButtons[14]);
+
+        _continue15.setEnabled(false);
+        controlPanel15.add(_continue15);
+
+        submitButtons[14].addActionListener(new ButtonClickListener());
+        _continue15.addActionListener(new ButtonClickListener());
+
+        //==================================================================================================
 
     }
 
@@ -807,66 +908,64 @@ public class Frame2 {
 
             String command = e.getActionCommand();
 
-            if(command.equals("Submit")){
+            if(command.equals("Submit")){ // when submit is clicked, get the string in the text box
                 if(t1.getText().toLowerCase().equals("keylogger")){
                     isCorrect = true;
                 } else if(t2.getText().toLowerCase().equals("identity theft")){
+                    isCorrect = true;
+                } else if(t3.getText().toLowerCase().equals("regulates")){
+                    isCorrect = true;
+                } else if(t4.getText().toLowerCase().indexOf("privacy") != -1 && t4.getText().toLowerCase().indexOf("property") != -1 && t4.getText().toLowerCase().indexOf("appropriate") != -1){
+                    isCorrect = true;
+                } else if(t5.getText().toLowerCase().indexOf("program") != -1 && t5.getText().toLowerCase().indexOf("unauthorized") != -1){
                     isCorrect = true;
                 }
             }
             if (command.equals("All of the above")) {
                 isCorrect = true;
-                //System.out.println("Correct Radio Button Selected");
-            } else if(command.equals("True")){
-                //System.out.println("Correct Answer Selected");
+            } else if(command.equals("True")) {
+                isCorrect = true;
+            }else if(command.equals("False ")){
+                isCorrect = true;
+            } else if(command.equals("gh1ghiph!@iAhg2!")){
+                isCorrect = true;
+            } else if(command.equals("Phishing")){
                 isCorrect = true;
             }
-            if(command.equals("False ")){
-                isCorrect = true;
-            }else if(command.equals("True ")) {
-                isCorrect = false;
-            }
-            if(command.equals("gh1ghiph!@iAhg2!")){
-                isCorrect = true;
-                System.out.println("Correct answer selected");
-            }
-            if(command.equals("Phishing")){
-                isCorrect = true;
-            }
-            // +++++++++++++++++++++++++++++++++++++++++++fix this++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            // if any other choice is selected, set isCorrect to false
             if(!command.equals("All of the above") && !command.equals("Submit") && !command.equals("True") && !command.equals("False ") && !command.equals("gh1ghiph!@iAhg2!") && !command.equals("Phishing")){
                 isCorrect = false;
-                //System.out.println("Wrong Answer Selected");
             }
-            if (command.equals("Submit") && isCorrect) {
+            if (command.equals("Submit") && isCorrect) { // if submit is pressed and the user was right
                 mainFrame.add(statusLabel);
-                statusLabel.setText("Correct!");
+                statusLabel.setText("Correct!"); // display correct
                 mainFrame.repaint();
-                continueButtons[panelIndex].setEnabled(true);
-                submitButtons[panelIndex].setEnabled(false);
+                continueButtons[panelIndex].setEnabled(true); // enable continue button
+                submitButtons[panelIndex].setEnabled(false); // disable submit button
                 score++;
-                //System.out.println("Correct!");
-            } else if (command.equals("Submit") && !isCorrect) {
+            } else if (command.equals("Submit") && !isCorrect) { // if submit is pressed and the user was wrong
                 mainFrame.add(statusLabel);
-                statusLabel.setText("Wrong!");
+                statusLabel.setText("Wrong!"); // display wrong
                 mainFrame.repaint();
-                continueButtons[panelIndex].setEnabled(true);
-                submitButtons[panelIndex].setEnabled(false);
+                continueButtons[panelIndex].setEnabled(true); // enable continue button
+                submitButtons[panelIndex].setEnabled(false); // disable submit button
             }
             if (command.equals("Continue")) {
+                // reset the text in the text box so it won't affect the answers
                 t1.setText("Enter your answer here");
                 t2.setText("Enter your answer here");
-                mainFrame.remove(statusLabel);
+                t3.setText("Enter your answer here");
+                t4.setText("Enter your answer here");
+                mainFrame.remove(statusLabel); // remove wrong or correct answer
                 mainFrame.repaint();
-                headerLabel.setText(questions[panelIndex + 1]);
-                mainFrame.remove(panels[panelIndex]);
+                headerLabel.setText(questions[panelIndex + 1]); // display the next question
+                mainFrame.remove(panels[panelIndex]); // remove panel
                 mainFrame.add(panels[panelIndex + 1]);
                 panels[panelIndex + 1].setVisible(true);
                 panelIndex++;
                 isCorrect = false;
-                System.out.println(score);
-                if(panelIndex == 11){
-                    headerLabel.setText("your score is: " + score);
+                if(panelIndex == 15){ // if the user reaches the final panel
+                    headerLabel.setText("your score is: " + score + "/15"); // display user's score
                 }
             }
         }
