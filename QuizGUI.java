@@ -204,7 +204,7 @@ public class QuizGUI {
     private JButton[] submitButtons = {submit, submit2, submit3, submit4, submit5, submit6, submit7, submit8, submit9, submit10, submit11, submit12, submit13, submit14, submit15};
 
     // score of the user
-    int score = 0;
+    private int score = 0;
 
     private QuizGUI() {
         prepareGUI();
@@ -213,7 +213,7 @@ public class QuizGUI {
     public static void main(String[] args) {
         QuizGUI swingControlDemo = new QuizGUI();
         swingControlDemo.showEventDemo();
-    }
+    } // end of main
 
     private void prepareGUI() {
         // initialize the window
@@ -333,7 +333,8 @@ public class QuizGUI {
         mainFrame.add(controlPanel);
         mainFrame.add(statusLabel);
         mainFrame.setVisible(true);
-    }
+
+    } // end of prepareGUI
 
     private void showEventDemo() {
 
@@ -952,7 +953,7 @@ public class QuizGUI {
 
         //==================================================================================================
 
-    }
+    } // end of showEventDemo
 
     private class ButtonClickListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -966,12 +967,13 @@ public class QuizGUI {
                     isCorrect = true;
                 } else if(t3.getText().toLowerCase().equals("regulates")){
                     isCorrect = true;
-                } else if(t4.getText().toLowerCase().indexOf("privacy") != -1 && t4.getText().toLowerCase().indexOf("property") != -1 && t4.getText().toLowerCase().indexOf("appropriate") != -1){
+                } else if(t4.getText().toLowerCase().contains("privacy") && t4.getText().toLowerCase().contains("property") && t4.getText().toLowerCase().contains("appropriate")){
                     isCorrect = true;
-                } else if(t5.getText().toLowerCase().indexOf("program") != -1 && t5.getText().toLowerCase().indexOf("unauthorized") != -1){
+                } else if(t5.getText().toLowerCase().contains("program") && t5.getText().toLowerCase().contains("unauthorized")){
                     isCorrect = true;
                 }
-            }
+            } // end of if for text box values
+
             if (command.equals("All of the above")) {
                 isCorrect = true;
             } else if(command.equals("True")) {
@@ -982,11 +984,13 @@ public class QuizGUI {
                 isCorrect = true;
             } else if(command.equals("Phishing")){
                 isCorrect = true;
-            }
+            } // end of if for multiple choice questions
+
             // if any other choice is selected, set isCorrect to false
             if(!command.equals("All of the above") && !command.equals("Submit") && !command.equals("True") && !command.equals("False ") && !command.equals("gh1ghiph!@iAhg2!") && !command.equals("Phishing")){
                 isCorrect = false;
             }
+
             if (command.equals("Submit") && isCorrect) { // if submit is pressed and the user was right
                 mainFrame.add(statusLabel);
                 statusLabel.setText("Correct!"); // display correct
@@ -1000,7 +1004,8 @@ public class QuizGUI {
                 mainFrame.repaint();
                 continueButtons[panelIndex].setEnabled(true); // enable continue button
                 submitButtons[panelIndex].setEnabled(false); // disable submit button
-            }
+            } // end of of for "Submit"
+
             if (command.equals("Continue")) {
                 // reset the text in the text box so it won't affect the answers
                 t1.setText("Enter your answer here");
@@ -1015,10 +1020,15 @@ public class QuizGUI {
                 panels[panelIndex + 1].setVisible(true);
                 panelIndex++;
                 isCorrect = false;
+
                 if(panelIndex == 15){ // if the user reaches the final panel
                     headerLabel.setText("your score is: " + score + "/15"); // display user's score
                 }
-            }
-        }
-    }
-}
+
+            } // end of if for "Continue"
+
+        } // end of action performed
+
+    } // end of ButtonClickListener
+
+} // end of QuizGUI
